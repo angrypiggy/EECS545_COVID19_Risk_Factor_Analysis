@@ -91,6 +91,10 @@ from sentence_transformers import SentenceTransformer
 sentence_model = SentenceTransformer("distilbert-base-nli-mean-tokens", device='cuda')
 embeddings = sentence_model.encode(lines[::10], show_progress_bar=True)
 
+topics = np.array(topics)
+idx_valid = topics != -1
+idx_valid.sum()
+
 from sentence_transformers import SentenceTransformer
 import matplotlib.pyplot as plt
 num_clusters_list = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]
